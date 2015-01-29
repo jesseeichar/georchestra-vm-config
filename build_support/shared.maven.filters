@@ -28,7 +28,7 @@ shared.instance.name=geOrchestra
 # and shared.server.port to 443
 # if your SDI is configured accordingly
 
-shared.server.name=vm-georchestra
+shared.server.name=localhost
 shared.url.scheme=http
 
 # sets the public address of your homepage.
@@ -116,14 +116,14 @@ shared.smtp.port=25
 
 # for emails sent by extractorapp:
 
-shared.email.replyTo=psc\@georchestra.org
-shared.email.from=psc\@georchestra.org
+shared.email.replyTo=jesse.eichar@camptocamp.com
+shared.email.from=jesse.eichar@camptocamp.com
 
 # the following email receives new account requests if ldapadmin
 # is configured with moderatedSignup = true (which is the default)
 # (have a look at your own GenerateConfig.groovy)
 
-shared.administrator.email=psc\@georchestra.org
+shared.administrator.email=jesse.eichar@camptocamp.com
 
 # send notification mails in HTML ?
 # Defaults to: false (ie. plain text emails)
