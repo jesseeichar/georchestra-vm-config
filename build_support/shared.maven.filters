@@ -30,7 +30,7 @@ shared.instance.name=geOrchestra
 
 shared.server.name=localhost
 shared.url.scheme=http
-shared.server.port=8080
+shared.server.port=8180
 
 # sets the public address of your homepage.
 # Defaults to @shared.url.scheme@://@shared.server.name@/

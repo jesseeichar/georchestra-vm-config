@@ -80,7 +80,7 @@ def server1Deployer = new SSHWarDeployer(
     stopServerCommand: "sudo /etc/init.d/tomcat-georchestra stop"
 )
 // Note that the deploy_user should have the rights to restart tomcat instances !
-server1Deployer.deploy(artifacts.findAll{ it.name.contains("analytics") || it.name.contains("extractorapp") || it.name.contains("geonetwork") || it.name.contains("header") || it.name.contains("ldapadmin") || it.name.contains("mapfishapp") || it.name.contains("geofence") })
+server1Deployer.deploy(artifacts.findAll{ it.name.contains("analytics") || it.name.contains("extractorapp") || it.name.contains("geonetwork") || it.name.contains("header") || it.name.contains("ldapadmin") || it.name.contains("mapfishapp") || it.name.contains("geofence")  || it.name.contains("geoserver") })
 
 // Deploy proxy and cas to their own tomcat instance:
 def proxycasDeployer = server1Deployer.copy(
@@ -90,16 +90,6 @@ def proxycasDeployer = server1Deployer.copy(
 )
 proxycasDeployer.deploy(artifacts.findAll{it.name.contains("ROOT") || it.name.contains("cas")})
 
-// Deploy geoserver to it's own tomcat instance:
-def geoserverArtifact = artifacts.find{it.name.startsWith("geoserver")}
-if (geoserverArtifact != null) {
-  def geoserverDeployer = server1Deployer.copy(
-    webappDir: "/srv/tomcat/geoserver0/webapps",
-    startServerCommand: "sudo /etc/init.d/tomcat-geoserver0 start",
-    stopServerCommand: "sudo /etc/init.d/tomcat-geoserver0 stop"
-  )
-  geoserverDeployer.deploy(geoserverArtifact)
-}
 
 
 

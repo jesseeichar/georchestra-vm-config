@@ -130,7 +130,7 @@ class GenerateConfig {
             to: 'security-proxy'
         ).update { properties ->
             properties['cas.private.host'] = "localhost"
-            properties['public.ssl'] = "443"
+            properties['public.ssl'] = "8443"
             properties['private.ssl'] = "8443"
             properties['proxy.defaultTarget'] = proxyDefaultTarget
             // remove.xforwarded.headers holds a list of servers for which x-forwarded-* headers should be removed:
@@ -143,7 +143,7 @@ class GenerateConfig {
 <entry key="downloadform"  value="proxyDefaultTarget/downloadform/" />
 <entry key="extractorapp"  value="proxyDefaultTarget/extractorapp/" />
 <entry key="geonetwork"    value="proxyDefaultTarget/geonetwork/" />
-<entry key="geoserver"     value="http://localhost:8180/geoserver/" />
+<entry key="geoserver"     value="proxyDefaultTarget/geoserver/" />
 <entry key="geowebcache"   value="proxyDefaultTarget/geowebcache/" />
 <entry key="geofence"      value="proxyDefaultTarget/geofence/" />
 <entry key="header"        value="proxyDefaultTarget/header/" />
